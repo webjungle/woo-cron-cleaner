@@ -1,0 +1,454 @@
+
+/* UIpress Lite inspired admin styling for Woo Cron Cleaner */
+
+.wccc-admin {
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+  background: #fff;
+  color: #1e1e1e;
+  max-width: 1200px;
+}
+
+.wccc-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.wccc-section h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.wccc-stats-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.wccc-stat-box {
+  flex: 1 1 200px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  text-align: center;
+}
+
+.wccc-stat-box h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #6b7280;
+}
+
+.wccc-stat-box p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.wccc-cron-table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.wccc-cron-table th,
+.wccc-cron-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.wccc-cron-table th {
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wccc-cron-table td code {
+  font-family: monospace;
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.wccc-plugin-filter {
+  margin-bottom: 16px;
+}
+
+.wccc-plugin-filter label {
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.wccc-badge-overdue {
+  color: #dc2626;
+}
+
+.wccc-badge-active {
+  color: #16a34a;
+}
+
+.wccc-paused-label {
+  color: #f59e0b;
+}
+
+
+/* ---------- MOBILE SUPPORT ---------- */
+@media (max-width: 768px) {
+  .wccc-stats-container {
+    flex-direction: column;
+  }
+
+  .wccc-cron-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .wccc-cron-table thead {
+    display: none;
+  }
+
+  .wccc-cron-table tr {
+    display: block;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    padding: 12px;
+  }
+
+  .wccc-cron-table td {
+    display: block;
+    border: none;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .wccc-cron-table td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #6b7280;
+    display: block;
+  }
+}
+
+/* ---------- DARK MODE SUPPORT ---------- */
+@media (prefers-color-scheme: dark) {
+  .wccc-admin {
+    background: #1e1e1e;
+    color: #e5e7eb;
+  }
+
+  .wccc-section {
+    background: #2a2a2a;
+    border-color: #444;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+
+  .wccc-stat-box {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+  }
+
+  .wccc-cron-table th {
+    background: #333;
+    color: #ccc;
+  }
+
+  .wccc-cron-table td {
+    color: #eee;
+  }
+
+  .wccc-cron-table td code {
+    background: #333;
+    color: #fff;
+  }
+
+  .wccc-badge-active {
+    color: #4ade80;
+  }
+
+  .wccc-badge-overdue {
+    color: #f87171;
+  }
+
+  .wccc-paused-label {
+    color: #fbbf24;
+  }
+}
+
+
+/* ---------- DARK MODE TOGGLE ---------- */
+.wccc-dark-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.wccc-dark-toggle button {
+  background: #e5e7eb;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.wccc-dark-toggle button:hover {
+  background: #d1d5db;
+}
+
+/* Dark mode override class */
+body.wccc-dark {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+body.wccc-dark .wccc-section {
+  background: #2d3748;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+body.wccc-dark .wccc-stat-box {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+body.wccc-dark .wccc-cron-table th {
+  background: #4b5563;
+  color: #f3f4f6;
+}
+
+body.wccc-dark .wccc-cron-table td code {
+  background: #4b5563;
+  color: #fff;
+}
+
+/* ---------- ANIMATIONS ---------- */
+.wccc-section, .wccc-stat-box, .wccc-cron-table {
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* ---------- DARK MODE FULL OVERRIDE ---------- */
+body.wccc-dark {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+body.wccc-dark #wccc-toggle-darkmode {
+  background: #1f2937;          /* dunkler Button */
+  color: #f9fafb;               /* fast weiß */
+  border: 1px solid #475569;
+}
+
+body.wccc-dark #wccc-toggle-darkmode:hover {
+  background: #374151;
+}
+
+body.wccc-dark .wccc-section {
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #f3f4f6;
+}
+
+body.wccc-dark .wccc-section h2,
+body.wccc-dark h1,
+body.wccc-dark h2,
+body.wccc-dark label {
+  color: #f9fafb;
+}
+
+body.wccc-dark .wccc-stat-box {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+body.wccc-dark .wccc-stat-box h3 {
+  color: #94a3b8;
+}
+
+body.wccc-dark .wccc-stat-box p {
+  color: #ffffff;
+}
+
+body.wccc-dark .wccc-cron-table {
+  background-color: #1e1e1e;
+}
+
+body.wccc-dark .wccc-cron-table th {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+
+body.wccc-dark .wccc-cron-table td {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+body.wccc-dark .wccc-cron-table td code {
+  background-color: #334155;
+  color: #f9fafb;
+}
+
+body.wccc-dark input,
+body.wccc-dark select,
+body.wccc-dark textarea {
+  background-color: #1e293b;
+  color: #f3f4f6;
+  border-color: #475569;
+}
+
+body.wccc-dark input[type="checkbox"] {
+  accent-color: #4ade80;
+}
+
+body.wccc-dark .wccc-badge-active {
+  color: #4ade80;
+}
+
+body.wccc-dark .wccc-badge-overdue {
+  color: #f87171;
+}
+
+body.wccc-dark .wccc-paused-label {
+  color: #fbbf24;
+}
+
+body.wccc-dark .button,
+body.wccc-dark input[type="submit"],
+body.wccc-dark .button-primary {
+  background-color: #2563eb;
+  border: none;
+  color: white;
+}
+
+body.wccc-dark .button:hover,
+body.wccc-dark input[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+
+
+/* ---------- FINAL DARK MODE FIXES ---------- */
+
+body.wccc-dark .wrap.wccc-admin {
+  background-color: #111827 !important;
+  color: #f3f4f6;
+}
+
+body.wccc-dark .wrap.wccc-admin p,
+body.wccc-dark .wrap.wccc-admin label,
+body.wccc-dark .wrap.wccc-admin th,
+body.wccc-dark .wrap.wccc-admin td,
+body.wccc-dark .wrap.wccc-admin span,
+body.wccc-dark .wrap.wccc-admin li {
+  color: #f3f4f6;
+}
+
+body.wccc-dark .form-table th {
+  color: #d1d5db;
+  background-color: transparent;
+}
+
+body.wccc-dark .form-table td {
+  color: #f9fafb;
+}
+
+body.wccc-dark input[type="text"],
+body.wccc-dark input[type="email"],
+body.wccc-dark input[type="number"],
+body.wccc-dark input[type="time"],
+body.wccc-dark select,
+body.wccc-dark textarea {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border-color: #475569;
+}
+
+body.wccc-dark .notice-success {
+  background-color: #14532d;
+  border-left-color: #22c55e;
+  color: #bbf7d0;
+}
+
+
+
+body,
+body.wccc-dark,
+body .wccc-section,
+body .wccc-stat-box,
+body .wccc-cron-table,
+body input,
+body select,
+body textarea {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#wccc-toggle-darkmode {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* Prevent transition flicker */
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  transition: none !important;
+}
+
+/* Mini preview hover */
+.wccc-dark-toggle {
+  position: relative;
+}
+
+.wccc-dark-toggle .wccc-dark-preview {
+  position: absolute;
+  right: 0;
+  top: 42px;
+  background: #1e293b;
+  color: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* KPI-Card Grid */
+.wccc-stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:16px;
+  margin-bottom:32px;
+}
+.wccc-stat-grid .card{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:14px;
+  text-align:center;
+  box-shadow:0 1px 2px rgba(0,0,0,.05);
+}
+body.wccc-dark .wccc-stat-grid .card{
+  background:#1f2937;
+  border-color:#374151;
+  box-shadow:0 1px 2px rgba(255,255,255,.05);
+}
