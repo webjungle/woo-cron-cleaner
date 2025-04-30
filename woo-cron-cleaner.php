@@ -68,8 +68,6 @@ wccc_fs()->add_filter('connect_message', function($message) {
 });
 
 
-require_once __DIR__ . '/includes/class-wccc-stats-api.php';
-require_once __DIR__ . '/includes/wccc-advanced-stats.php';
 
 
 function wccc_send_email_report() {
